@@ -33,6 +33,8 @@ import org.springframework.security.web.SecurityFilterChain;
 //revert-3
 //revert-4
 
+//test for squash-1
+
 @Configuration
 @EnableWebSecurity
 public class AppSecurityConfiguration {
