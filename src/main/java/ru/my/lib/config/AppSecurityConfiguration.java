@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 
 //commit-1-master
+//commit-2-master
 
 @Configuration
 @EnableWebSecurity
