@@ -35,6 +35,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 //test for squash-1
 
+//Checkout and Rebase
+
 @Configuration
 @EnableWebSecurity
 public class AppSecurityConfiguration {
