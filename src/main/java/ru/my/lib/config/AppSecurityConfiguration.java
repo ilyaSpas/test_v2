@@ -17,6 +17,12 @@ import org.springframework.security.web.SecurityFilterChain;
 //test-4
 //test-5
 
+//test-2-1
+//test-2-2
+//test-2-3
+//test-2-4
+//test-2-5
+
 @Configuration
 @EnableWebSecurity
 public class AppSecurityConfiguration {
