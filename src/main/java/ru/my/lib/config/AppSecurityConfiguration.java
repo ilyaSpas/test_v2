@@ -28,6 +28,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 //patch-test-1
 
+//revert-1
+
 @Configuration
 @EnableWebSecurity
 public class AppSecurityConfiguration {
