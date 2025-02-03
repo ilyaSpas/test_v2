@@ -36,6 +36,7 @@ public class CheckRussianComments {
             List<String> lines = Files.readAllLines(filePath);
             boolean hasComments = IntStream.range(0, lines.size())
                     .filter(i -> RUSSIAN_COMMENT_PATTERN.matcher(lines.get(i)).find())
+                    .filter(i -> !lines.get(i).contains("RUSSIAN_COMMENT_PATTERN")) // Исключаем строку с объявлением паттерна
                     .peek(i -> System.err.printf("❗ Найден русский комментарий в файле %s на строке %d: %s%n",
                             filePath.getFileName(), i + 1, lines.get(i).trim()))
                     .findFirst()
@@ -47,4 +48,5 @@ public class CheckRussianComments {
             return false;
         }
     }
+
 }
