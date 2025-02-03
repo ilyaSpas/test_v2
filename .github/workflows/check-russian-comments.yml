@@ -1,6 +1,9 @@
 name: Check Russian Comments
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - master
 
 jobs:
   check-comments:
@@ -10,13 +13,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v3
         with:
-          python-version: '3.x'
+          distribution: 'temurin'
+          java-version: '17'  # Замени на нужную версию
 
-      - name: Install Dependencies
-        run: pip install regex
+      - name: Compile Project
+        run: mvn clean compile
 
-      - name: Check for Russian Comments
-        run: python .github/scripts/check_russian_comments.py
+      - name: Run Russian Comment Check
+        run: mvn exec:java -Dexec.mainClass="com.example.CheckRussianComments"
