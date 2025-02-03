@@ -23,4 +23,4 @@ jobs:
         run: mvn clean compile
 
       - name: Run Russian Comment Check
-        run: mvn exec:java -Dexec.mainClass="com.example.CheckRussianComments"
+        run: mvn e
