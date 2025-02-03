@@ -1,0 +1,22 @@
+name: Check Russian Comments
+
+on: [push, pull_request]
+
+jobs:
+  check-comments:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install regex
+
+      - name: Check for Russian Comments
+        run: python .github/scripts/check_russian_comments.py
