@@ -49,12 +49,12 @@ public class AppSecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/private/**").authenticated() // Защита для /private
-                        .anyRequest().permitAll()                      // Остальные эндпоинты доступны всем
+                        .requestMatchers("/api/private/**").authenticated()
+                        .anyRequest().permitAll()
                 )
-                .formLogin(form -> form.defaultSuccessUrl("/", true)) // Настройка формы логина
-                .logout(logout -> logout.logoutUrl("/logout"))       // Настройка логаута
-                .csrf(csrf -> csrf.disable());                      // Отключение CSRF (опционально, если используется REST API)
+                .formLogin(form -> form.defaultSuccessUrl("/", true))
+                .logout(logout -> logout.logoutUrl("/logout"))
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
