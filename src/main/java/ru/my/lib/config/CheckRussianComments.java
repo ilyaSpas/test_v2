@@ -12,7 +12,9 @@ public class CheckRussianComments {
     private static final Pattern RUSSIAN_COMMENT_PATTERN = Pattern.compile("//.*[А-Яа-яЁё]|/\\*.*[А-Яа-яЁё].*\\*/");
 
     public static void main(String[] args) throws IOException {
-        Path sourcePath = Paths.get("src/main/java"); // Корень с исходниками
+        // Автоматически получаем путь к src/main/java
+        Path sourcePath = Paths.get(System.getProperty("user.dir"), "src", "main", "java");
+
         try (Stream<Path> paths = Files.walk(sourcePath)) {
             boolean hasRussianComments = paths
                     .filter(Files::isRegularFile)
