@@ -1,5 +1,5 @@
 package ru.my.lib.config;
 
-//hello афыпвы
+//hello
 public class MyClass {
 }
