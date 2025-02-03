@@ -17,10 +17,10 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'  # Замени на нужную версию
+          java-version: '17'
 
       - name: Compile Project
         run: mvn clean compile
 
       - name: Run Russian Comment Check
-        run: mvn e
+        run: mvn clean compile exec:java -Dexec.mainClass=ru.my.lib.config.CheckRussianComments
